@@ -12,11 +12,11 @@ class ClientService {
         this.repository = repository;
     }
 
-    public async findById(id: string){
+    public async findById(id: string) {
         const result = await this.repository.findById(id);
 
-        if(!result){
-            throw new AppError(`User with id ${id} not found`, StatusCodes.NOT_FOUND);
+        if (!result) {
+            throw new AppError(`Client with id ${id} not found`, StatusCodes.NOT_FOUND);
         }
 
         return result;
@@ -39,6 +39,14 @@ class ClientService {
             password: await hash(password)
         });
 
+    }
+
+    public async delete(id: string) {
+        if (!await this.repository.findById(id)) {
+            throw new AppError(`Client with id ${id} not found`, StatusCodes.NOT_FOUND);
+        }
+
+        await this.repository.delete(id);
     }
 
 }

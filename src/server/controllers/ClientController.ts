@@ -32,6 +32,14 @@ class ClientController {
         return res.status(StatusCodes.CREATED).json(result);
     }
 
+    public async destroy(req: Request, res: Response) {
+        const { id } = req.params;
+
+        await this.service.delete(id);
+
+        return res.status(StatusCodes.NO_CONTENT).send();
+    }
+
 }
 
 export { ClientController };

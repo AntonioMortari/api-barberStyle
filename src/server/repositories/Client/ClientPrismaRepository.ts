@@ -47,6 +47,14 @@ class ClientPrismaRepository implements IClientRepository {
         return result;
     }
 
+    public async delete(id: string):Promise<void>{
+        await prisma.client.delete({
+            where:{
+                id
+            }
+        });
+    }
+
 }
 
 export { ClientPrismaRepository };

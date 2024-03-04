@@ -20,4 +20,5 @@ export interface IClientRepository {
     findById: (id: string) => Promise<IClient | null>
     findByEmail: (email: string) => Promise<IClient | null>
     findByPhone: (phone: string) => Promise<IClient | null>
+    delete: (id: string) => Promise<void>
 }

@@ -18,4 +18,8 @@ router.post('/', async (req: Request, res: Response) => {
     await clientController.store(req,res);
 });
 
+router.delete('/:id', async(req: Request,res: Response) => {
+    await clientController.destroy(req,res);
+});
+
 export { router as clientRoutes };
