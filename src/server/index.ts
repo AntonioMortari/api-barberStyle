@@ -4,6 +4,7 @@ import express from 'express';
 import cors from 'cors';
 import { clientRoutes } from './routes/client.routes';
 import { scheduleRoutes } from './routes/schedule.routes';
+import { rootRoutes } from './routes/root.routes';
 import { errorMiddleware } from './middlewares/error';
 
 import 'dotenv/config';
@@ -17,6 +18,7 @@ server.use(cors());
 // routes
 server.use('/clients', clientRoutes);
 server.use('/schedules', scheduleRoutes);
+server.use('/roots', rootRoutes);
 
 server.use(errorMiddleware);
 export { server };

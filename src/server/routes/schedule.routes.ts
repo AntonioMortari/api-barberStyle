@@ -3,6 +3,7 @@ import { ClientPrismaRepository } from '../repositories/Client/ClientPrismaRepos
 import { SchedulePrimaRepository } from '../repositories/Schedule/SchedulePrismaRepository';
 import { ScheduleService } from '../services/ScheduleService';
 import { ScheduleController } from '../controllers/ScheduleController';
+import { isAuthenticated } from '../middlewares/isAuthenticated';
 
 const router: Router = Router();
 
@@ -12,20 +13,20 @@ const scheduleRepository = new SchedulePrimaRepository();
 const scheduleService = new ScheduleService(scheduleRepository, clientRepository);
 const scheduleController = new ScheduleController(scheduleService);
 
-router.get('/', async (req: Request, res: Response) => {
-    await scheduleController.index(req,res);
+router.get('/', isAuthenticated, async (req: Request, res: Response) => {
+    await scheduleController.index(req, res);
 });
 
 router.post('/', async (req: Request, res: Response) => {
-    await scheduleController.store(req,res);
+    await scheduleController.store(req, res);
 });
 
-router.delete('/:id', async (req: Request, res: Response) => {
-    await scheduleController.destroy(req,res);
+router.delete('/:id', isAuthenticated, async (req: Request, res: Response) => {
+    await scheduleController.destroy(req, res);
 });
 
-router.put('/:id', async (req: Request, res: Response) => {
-    await scheduleController.edit(req,res);
+router.put('/:id', isAuthenticated, async (req: Request, res: Response) => {
+    await scheduleController.edit(req, res);
 });
 
 

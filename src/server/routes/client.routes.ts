@@ -2,6 +2,7 @@ import { Request, Response, Router } from 'express';
 import { ClientPrismaRepository } from '../repositories/Client/ClientPrismaRepository';
 import { ClientService } from '../services/ClientService';
 import { ClientController } from '../controllers/ClientController';
+import { isAuthenticated } from '../middlewares/isAuthenticated';
 
 const router: Router = Router();
 
@@ -18,7 +19,7 @@ router.post('/', async (req: Request, res: Response) => {
     await clientController.store(req,res);
 });
 
-router.delete('/:id', async(req: Request,res: Response) => {
+router.delete('/:id', isAuthenticated, async(req: Request,res: Response) => {
     await clientController.destroy(req,res);
 });
 
