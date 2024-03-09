@@ -4,6 +4,7 @@ import { SchedulePrimaRepository } from '../repositories/Schedule/SchedulePrisma
 import { ScheduleService } from '../services/ScheduleService';
 import { ScheduleController } from '../controllers/ScheduleController';
 import { isAuthenticated } from '../middlewares/isAuthenticated';
+import { createScheduleValidation, getAllScheduleValidation } from '../validations/Schedules';
 
 const router: Router = Router();
 
@@ -13,11 +14,11 @@ const scheduleRepository = new SchedulePrimaRepository();
 const scheduleService = new ScheduleService(scheduleRepository, clientRepository);
 const scheduleController = new ScheduleController(scheduleService);
 
-router.get('/', isAuthenticated, async (req: Request, res: Response) => {
+router.get('/', isAuthenticated, getAllScheduleValidation, async (req: Request, res: Response) => {
     await scheduleController.index(req, res);
 });
 
-router.post('/', async (req: Request, res: Response) => {
+router.post('/', createScheduleValidation, async (req: Request, res: Response) => {
     await scheduleController.store(req, res);
 });
 

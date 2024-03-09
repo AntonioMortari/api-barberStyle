@@ -270,6 +270,13 @@
   resolved "https://registry.yarnpkg.com/@types/http-errors/-/http-errors-2.0.4.tgz#7eb47726c391b7345a6ec35ad7f4de469cf5ba4f"
   integrity sha512-D0CFMMtydbJAegzOyHjtiKPLlvnm3iTZyZRSZoLq2mRhDdmLfIWOCYPfQJ4cu2erKghU++QvjcUjp/5h7hESpA==
 
+"@types/joi@^17.2.3":
+  version "17.2.3"
+  resolved "https://registry.yarnpkg.com/@types/joi/-/joi-17.2.3.tgz#b7768ed9d84f1ebd393328b9f97c1cf3d2b94798"
+  integrity sha512-dGjs/lhrWOa+eO0HwgxCSnDm5eMGCsXuvLglMghJq32F6q5LyyNuXb41DHzrg501CKNOSSAHmfB7FDGeUnDmzw==
+  dependencies:
+    joi "*"
+
 "@types/json-schema@^7.0.12":
   version "7.0.15"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.15.tgz#596a1747233694d50f6ad8a7869fcb6f56cf5841"
@@ -298,6 +305,13 @@
   integrity sha512-Kza43ewS3xoLgCEpQrsT+xRo/EJej1y0kVYGiLFE1NEODXGzTfwiC6tXTLMQskn1X4/Rjlh0MQUvx9W+L9long==
   dependencies:
     undici-types "~5.26.4"
+
+"@types/nodemailer@^6.4.14":
+  version "6.4.14"
+  resolved "https://registry.yarnpkg.com/@types/nodemailer/-/nodemailer-6.4.14.tgz#5c81a5e856db7f8ede80013e6dbad7c5fb2283e2"
+  integrity sha512-fUWthHO9k9DSdPCSPRqcu6TWhYyxTBg382vlNIttSe9M7XfsT06y0f24KHXtbnijPGGRIcVvdKHTNikOI6qiHA==
+  dependencies:
+    "@types/node" "*"
 
 "@types/qs@*":
   version "6.9.12"
@@ -1317,7 +1331,7 @@ isexe@^2.0.0:
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
   integrity sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==
 
-joi@17.x.x:
+joi@*, joi@17.x.x:
   version "17.12.2"
   resolved "https://registry.yarnpkg.com/joi/-/joi-17.12.2.tgz#283a664dabb80c7e52943c557aab82faea09f521"
   integrity sha512-RonXAIzCiHLc8ss3Ibuz45u28GOsWE1UpfDXLbN/9NKbL4tCJf8TWYVKsoYuuh+sAUt7fsSNpA+r2+TBA6Wjmw==
@@ -1589,6 +1603,11 @@ node-fetch@^2.6.7:
   integrity sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==
   dependencies:
     whatwg-url "^5.0.0"
+
+nodemailer@^6.9.11:
+  version "6.9.11"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.9.11.tgz#900703bd6dc62855d9cea962acf261926841f825"
+  integrity sha512-UiAkgiERuG94kl/3bKfE8o10epvDnl0vokNEtZDPTq9BWzIl6EFT9336SbIT4oaTBD8NmmUTLsQyXHV82eXSWg==
 
 nodemon@^3.1.0:
   version "3.1.0"

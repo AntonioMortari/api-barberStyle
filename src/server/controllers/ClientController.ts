@@ -19,6 +19,14 @@ class ClientController {
         return res.status(StatusCodes.OK).json(result);
     }
 
+    public async index(req: Request, res: Response) {
+        const { email } = req.query;
+
+        const result = await this.service.findAll(email && email.toString());
+
+        return res.status(StatusCodes.OK).json(result);
+    }
+
     public async store(req: Request<{}, {}, ICreateClient>, res: Response) {
         const { name, phone, email, password } = req.body;
 

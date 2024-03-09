@@ -31,5 +31,4 @@ model Root {
   name       String
   email      String @unique
   password   String
-  avatar_url String @default("")
 }

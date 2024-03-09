@@ -22,6 +22,12 @@ class ClientService {
         return result;
     }
 
+    public async findAll(email?: string){
+        const result = await this.repository.findAll(email);
+
+        return result;
+    }
+
     public async create({ name, phone, email, password }: ICreateClient) {
 
         if (await this.repository.findByEmail(email)) {

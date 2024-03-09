@@ -3,6 +3,16 @@ import { IClient, IClientRepository, ICreateClient } from '../../interfaces/Clie
 
 class ClientPrismaRepository implements IClientRepository {
 
+    public async findAll(email?: string): Promise<IClient[]>{
+        const result = await prisma.client.findMany({
+            where:{
+                email
+            }
+        });
+
+        return result;
+    }
+
     public async findById(id: string): Promise<IClient | null>{
         const result = await prisma.client.findUnique({
             where:{
